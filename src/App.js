@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import './App.css';
 
 // 診断の質問（4つの軸 × 2問 = 8問）
@@ -234,7 +234,6 @@ function App() {
     if (currentQuestion > 0 && answers.length > 0) {
       setFadeIn(false);
       setTimeout(() => {
-        const prevAnswer = answers[answers.length - 1];
         setScores(answers.length > 1 ? answers[answers.length - 2].scores : { G: 0, S: 0, F: 0, I: 0, L: 0, H: 0, P: 0, N: 0 });
         setAnswers(answers.slice(0, -1));
         setCurrentQuestion(currentQuestion - 1);
